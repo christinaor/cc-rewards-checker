@@ -1,3 +1,48 @@
-// .cardDisplay {
+@import 'src/styles/colors.scss';
 
+// .cardDisplay {
+  // padding: 2rem 1rem;
 // }
+
+.cardDisplayTitle {
+  padding: 1rem;
+}
+
+.cardDisplayList {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+  // align-items: center;
+  // width: 360px;
+}
+.updating {
+  background-color: green;
+}
+
+.cardDisplayItem {
+  display: flex;
+  flex-direction: row;
+  // justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 3rem;
+  margin: 1rem 0;
+  padding: 2rem 1.5rem;
+  // width: 100%;
+
+  border: 1px solid $mainTextColorBlack;
+  border-radius: 20px;
+}
+
+// .cardDisplayName {
+  
+// }
+
+.cardDisplayDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}

@@ -1,3 +1,33 @@
+@import '/src/styles/colors.scss';
+
 .home {
-  
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  height: 100%;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.5rem;
+}
+.addCardButton, .editCardsButton{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  // margin: 1rem;
+  padding: 1rem;
+  width: 8rem;
+
+  border: 1px solid $mainTextColorBlack;
+  border-radius: 40px;
+  background-color: transparent;
+
 }

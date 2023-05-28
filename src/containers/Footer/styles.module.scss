@@ -1,3 +1,9 @@
-// .footer {
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-// }
+  padding: 2rem 0;
+
+  font-size: 0.8rem;
+}
