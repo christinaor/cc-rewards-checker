@@ -1,0 +1,48 @@
+@import 'src/styles/colors.scss';
+
+.categoryFilter {
+  // display: flex;
+  // flex-direction: column;
+  padding: 1rem 0 0 1rem;
+  // gap: 0.5rem;
+}
+
+.filterText {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 0.9rem;
+}
+
+.displayCategory {
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  width: 10rem;
+
+  border: 1px solid $backgroundColorDarkMint;
+  border-radius: 8px;
+  background-color: $mainTextColorWhite;
+}
+.toggledDropdown {
+  border-bottom-left-radius: none;
+  border-bottom-right-radius: none;
+}
+
+.categoryList {
+  position: absolute;
+  margin: 0;
+  padding: 0.5rem;
+  width: 10rem;
+
+  list-style-type: none;
+
+  border: 1px solid $backgroundColorDarkMint;
+  background-color: $mainTextColorWhite;
+}
+
+.categoryItem {
+  padding: 0.2rem 0;
+  font-size: 0.8rem;
+}

@@ -1,8 +1,9 @@
 @import 'src/styles/colors.scss';
 
-// .cardDisplay {
+.cardDisplay {
   // padding: 2rem 1rem;
-// }
+  min-height: 400px;
+}
 
 .cardDisplayTitle {
   padding: 2rem 1rem 0;

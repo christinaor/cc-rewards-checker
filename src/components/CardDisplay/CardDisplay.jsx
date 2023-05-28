@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import mockUserData from '/mockData/userData';
+
+import CategoryFilter from "../CategoryFilter/CategoryFilter";
 
 import styles from './styles.module.scss';
 
@@ -12,13 +16,31 @@ export default function CardDisplay({
   selectedCard,
   setSelectedCard,
 }) {
-  // const [isEditingCard, setIsEditingCard] = useState(false);
-  // const [selectedCard, setSelectedCard] = useState({
-  //   id: null,
-  //   category: '',
-  //   percentage: '',
-  //   points: '',
-  // });
+
+  const [categories, setCategories] = useState([]);
+  const [currentCategory, setCurrentCategory] = useState('all')
+
+  useEffect(() => {
+    if (currentCategory !== 'all') {
+      const filteredUserData = mockUserData.filter(card => card.category === currentCategory);
+      setUserData(filteredUserData);
+    } else {
+      setUserData(mockUserData);
+    }
+  }, [currentCategory, setUserData])
+
+  useEffect(() => {
+    if (mockUserData.length > 0) {
+      const existingCategories = mockUserData.reduce((accumulator, card) => {
+        console.log(card)
+        if (!accumulator.includes(card.category)) {
+          accumulator.push(card.category);
+        }
+        return accumulator;
+      }, [])
+      setCategories(existingCategories);
+    }
+  }, [userData])
 
   const handleUpdateCard = (card) => {
     console.log(card)
@@ -80,6 +102,13 @@ export default function CardDisplay({
   return (
     <div className={styles.cardDisplay}>
       <h2 className={styles.cardDisplayTitle}>{!isUpdating ? 'Current Cards' : 'Select a Card to Update'}</h2>
+
+      <CategoryFilter 
+        categories={categories}
+        setCategories={setCategories}
+        currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
+      />
 
       <div className={`${isUpdating ? styles.updatingList : ''} ${styles.cardDisplayList}`}>
         {userData.length > 0 && userData.map((card, index) => (
