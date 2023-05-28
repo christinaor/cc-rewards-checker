@@ -29,6 +29,7 @@ export default function CardDisplay({
     }
   }, [currentCategory, setUserData])
 
+  console.log(currentCategory)
   useEffect(() => {
     if (mockUserData.length > 0) {
       const existingCategories = mockUserData.reduce((accumulator, card) => {
