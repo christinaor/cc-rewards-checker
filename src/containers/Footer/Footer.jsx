@@ -4,9 +4,9 @@ import styles from './styles.module.scss';
 
 export default function Footer(props) {
   return (
-    <div className={styles.footer}>
-      FOOTER
-    </div>
+    <footer className={styles.footer}>
+      Tech Together 2023
+    </footer>
   )
 };
 
