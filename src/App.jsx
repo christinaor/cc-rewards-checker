@@ -1,7 +1,6 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
+import Header from './containers/Header/Header'
 import Home from './containers/Home/Home'
 import Login from './components/Login/Login'
 import Footer from './containers/Footer/Footer'
@@ -10,7 +9,8 @@ function App() {
 
   return (
     <div id="main">
-      <Login />
+      {/* <Login /> */}
+      <Header />
       <Home />
       <Footer />
     </div>

@@ -1,11 +1,9 @@
-import { useState } from "react";
+import styles from './styles.module.scss';
 
-import styles from 'styles.module.scss';
-
-export default function Header(props) {
+export default function Header() {
   return (
-    <div>
-      HEADER
-    </div>
+    <h1 className={styles.header}>
+      CC Rewards Checker
+    </h1>
   )
-};
+}
