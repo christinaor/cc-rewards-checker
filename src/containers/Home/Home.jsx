@@ -12,6 +12,24 @@ export default function Home(props) {
   // const [userData, setUserData] = useState([]);
   const [addingCard, setAddingCard] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isEditingCard, setIsEditingCard] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({
+    id: null,
+    category: '',
+    percentage: '',
+    points: '',
+  });
+
+  const handleCancelUpdate = () => {
+    setIsUpdating(false);
+    setIsEditingCard(false);
+    setSelectedCard({
+      id: null,
+      category: '',
+      percentage: '',
+      points: '',
+    });
+  }
 
   return (
     <section className={styles.homeWrapper}>
@@ -21,6 +39,10 @@ export default function Home(props) {
           setUserData={setUserData}
           isUpdating={isUpdating}
           setIsUpdating={setIsUpdating}
+          isEditingCard={isEditingCard}
+          setIsEditingCard={setIsEditingCard}
+          selectedCard={selectedCard}
+          setSelectedCard={setSelectedCard}
         />
 
         <div className={styles.buttons}>
@@ -33,7 +55,7 @@ export default function Home(props) {
 
           {isUpdating && (
             <div className={styles.cancelUpdatingButtonWrapper}>
-              <button className={styles.cancelUpdatingButton} onClick={() => setIsUpdating(false)}>Cancel Update</button>
+              <button className={styles.cancelUpdatingButton} onClick={handleCancelUpdate}>Cancel Update</button>
             </div>
           )}
         </div>

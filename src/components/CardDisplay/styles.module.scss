@@ -51,6 +51,17 @@
   align-items: flex-end;
 }
 
+label {
+  font-size: 0.8rem;
+}
+
+.input {
+  padding: 0.5rem;
+  // width: 8rem;
+  border: 1px solid $backgroundColorDarkMint;
+  border-radius: 4px;
+}
+
 .buttons {
   display: flex;
   // justify-content: center;
@@ -67,4 +78,5 @@
   font-weight: 600;
   color: $mainTextColorWhite;
   background-color: $backgroundColorMint;
+  cursor: pointer;
 }

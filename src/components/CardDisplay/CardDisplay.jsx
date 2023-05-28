@@ -2,16 +2,26 @@ import { useState } from "react";
 
 import styles from './styles.module.scss';
 
-export default function CardDisplay({ userData = [], setUserData, isUpdating, setIsUpdating }) {
-  const [isEditingCard, setIsEditingCard] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({
-    id: null,
-    category: '',
-    percentage: '',
-    points: '',
-  });
+export default function CardDisplay({ 
+  userData = [], 
+  setUserData, 
+  isUpdating, 
+  setIsUpdating,
+  isEditingCard,
+  setIsEditingCard,
+  selectedCard,
+  setSelectedCard,
+}) {
+  // const [isEditingCard, setIsEditingCard] = useState(false);
+  // const [selectedCard, setSelectedCard] = useState({
+  //   id: null,
+  //   category: '',
+  //   percentage: '',
+  //   points: '',
+  // });
 
   const handleUpdateCard = (card) => {
+    console.log(card)
     setSelectedCard({
       id: card.id,
       category: card.category,
@@ -36,32 +46,35 @@ export default function CardDisplay({ userData = [], setUserData, isUpdating, se
     setUserData(updatedCards);
   }
 
-  const handleSubmitUpdate = (e, selectedCard) => {
+  const handleSubmitUpdate = (e, card) => {
     e.preventDefault();
 
-    console.log(selectedCard)
+    const updatedCards = [];
+    for (const userCard of userData) {
+      if (userCard.id === card.id) {
+        const updatedCard = {
+          category: selectedCard.category,
+          id: card.id,
+          name: card.name,
+          percentage: (selectedCard.percentage ? parseFloat(selectedCard.percentage) : ''),
+          points: (selectedCard.points ? parseFloat(selectedCard.points) : ''),
+        };
+        updatedCards.push(updatedCard);
+      } else {
+        updatedCards.push(userCard);
+      }
+    }
 
-    // const updatedCards = userData.reduce((accumulator, card) => {
-    //   if (card.id === selectedCard.id) {
-    //     card.category = selectedCard.category;
-    //     card.percentage = (selectedCard.percentage ? selectedCard.percentage : null);
-    //     card.points = (selectedCard.points ? selectedCard.points : null);
-    //   }
-    //   accumulator.push(card);
-
-    //   return accumulator;
-    // }, []);
-    // console.log(updatedCards)
-
-    // setUserData(updatedCards);
-    // setIsEditingCard(false);
-    // setIsUpdating(false);
-    // setSelectedCard({
-    //   id: null,
-    //   category: '',
-    //   percentage: '',
-    //   points: '',
-    // });
+    console.log(updatedCards)
+    setUserData(updatedCards);
+    setIsEditingCard(false);
+    setIsUpdating(false);
+    setSelectedCard({
+      id: null,
+      category: '',
+      percentage: '',
+      points: '',
+    });
   }
 
   return (
@@ -73,9 +86,9 @@ export default function CardDisplay({ userData = [], setUserData, isUpdating, se
           <div key={`card-item-${index}`} className={`${isUpdating ? styles.updatingItem : ''} ${styles.cardDisplayItem}`}>
             <h3 className={styles.cardDisplayName}>{card.name}</h3>
 
-            <div className={styles.cardDisplayDetails}>
+            <div className={styles.cardDisplayDetailsWrapper}>
               {!isEditingCard && (
-                <div>
+                <div className={styles.cardDisplayDetails}>
                   <div>{card.category}</div>
                   {card.percentage && <div>{card.percentage}%</div>}
                   {card.points && <div>{card.points} pts</div>}
@@ -84,30 +97,39 @@ export default function CardDisplay({ userData = [], setUserData, isUpdating, se
               
               {isEditingCard && card.id === selectedCard.id && (
                 <form>
-                  <label htmlFor="category">Category:</label>
-                  <input 
-                    name="category" 
-                    type="text"
-                    value={selectedCard.category} 
-                    onChange={(e) => setSelectedCard({...selectedCard, category: e.target.value})}
-                    required
-                  />
+                  <div className={styles.formField}>
+                    <label htmlFor="category">Category:</label>
+                    <input 
+                      className={styles.input}
+                      name="category" 
+                      type="text"
+                      value={selectedCard.category} 
+                      onChange={(e) => setSelectedCard({...selectedCard, category: e.target.value})}
+                      required
+                    />
+                  </div>
 
-                  <label htmlFor="percentage">Percentage:</label>
-                  <input 
-                    name="percentage" 
-                    type="number"
-                    value={selectedCard.percentage} 
-                    onChange={(e) => setSelectedCard({...selectedCard, percentage: e.target.value})}
-                  />
+                  <div className={styles.formField}>
+                    <label htmlFor="percentage">Percentage:</label>
+                    <input 
+                      className={styles.input}
+                      name="percentage" 
+                      type="number"
+                      value={selectedCard.percentage} 
+                      onChange={(e) => setSelectedCard({...selectedCard, percentage: e.target.value})}
+                    />
+                  </div>
 
-                  <label htmlFor="points">Points:</label>
-                  <input 
-                    name="points" 
-                    type="number"
-                    value={selectedCard.points} 
-                    onChange={(e) => setSelectedCard({...selectedCard, points: e.target.value})}
-                  />
+                  <div className={styles.formField}>
+                    <label htmlFor="points">Points:</label>
+                    <input 
+                      className={styles.input}
+                      name="points" 
+                      type="number"
+                      value={selectedCard.points} 
+                      onChange={(e) => setSelectedCard({...selectedCard, points: e.target.value})}
+                    />
+                  </div>
                 </form>
               )}
 
@@ -119,7 +141,7 @@ export default function CardDisplay({ userData = [], setUserData, isUpdating, se
                   {!isEditingCard && (
                     <button onClick={() => handleDeleteCard(card.id)}>Delete</button>
                   )}
-                  
+
                   {isEditingCard && card.id === selectedCard.id && (
                     <button onClick={(e) => handleSubmitUpdate(e, card)}>Submit</button>
                   )}
