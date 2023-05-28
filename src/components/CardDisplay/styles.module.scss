@@ -5,19 +5,18 @@
 // }
 
 .cardDisplayTitle {
-  padding: 1rem;
+  padding: 2rem 1rem 0;
 }
 
 .cardDisplayList {
   display: flex;
   flex-direction: column;
 
+  margin-top: 1rem;
   padding: 1rem;
-  // align-items: center;
-  // width: 360px;
 }
-.updating {
-  background-color: green;
+.updatingList {
+  background-color: $backgroundColorDarkMint;
 }
 
 .cardDisplayItem {
@@ -30,10 +29,15 @@
   gap: 3rem;
   margin: 1rem 0;
   padding: 2rem 1.5rem;
+  min-height: 100px;
   // width: 100%;
 
-  border: 1px solid $mainTextColorBlack;
+  border: 1px solid $backgroundColorMint;
   border-radius: 20px;
+  background-color: $mainTextColorWhite;
+}
+.updatingItem:hover {
+  background: $backgroundColorLightMint
 }
 
 // .cardDisplayName {
@@ -45,4 +49,22 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.buttons {
+  display: flex;
+  // justify-content: center;
+  
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  padding: 0.5rem;
+
+  border: 1px solid $backgroundColorMint;
+  border-radius: 40px;
+  font-weight: 600;
+  color: $mainTextColorWhite;
+  background-color: $backgroundColorMint;
 }

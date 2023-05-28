@@ -1,3 +1,5 @@
+@import '/src/styles/colors.scss';
+
 .footer {
   display: flex;
   justify-content: center;
@@ -6,4 +8,7 @@
   padding: 2rem 0;
 
   font-size: 0.8rem;
+  color: $mainTextColorWhite;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,36,29,1) 35%, rgba(82,182,148,1) 100%);
 }
