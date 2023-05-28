@@ -7,24 +7,28 @@ import mockCardData from '/mockdata/userData'
 import CardDisplay from "../../components/CardDisplay/CardDisplay";
 
 export default function Home(props) {
-  /**
-   *  Fields for MVP
-   *  card name
-      reward type/categories
-      reward percentage
-      reward points
-   */
   // userData - arr of objs with card data
   const [userData, setUserData] = useState(mockCardData);
+  // const [userData, setUserData] = useState([]);
   const [addingCard, setAddingCard] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
 
   return (
     <section className={styles.home}>
       <CardDisplay
         userData={userData}
+        isUpdating={isUpdating}
       />
 
-      {!addingCard && <button onClick={() => setAddingCard(true)}>Add New Card</button>}
+      <div className={styles.buttons}>
+        {(!addingCard && !isUpdating) && (
+          <button className={styles.addCardButton} onClick={() => setAddingCard(true)}>Add New Card</button>
+        )}
+        {(!addingCard && !isUpdating) && (
+          <button className={styles.editCardsButton} onClick={() => setIsUpdating(true)}>Edit Cards</button>
+        )}
+      </div>
+
       {addingCard && (
         <CardForm 
           setAddingCard={setAddingCard}

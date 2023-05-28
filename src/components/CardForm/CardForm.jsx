@@ -51,7 +51,7 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
   }
 
   return (
-    <div>
+    <div className={styles.cardForm}>
       <div>Add A Card:</div>
     
       <form>
