@@ -1,27 +1,52 @@
-# TechTogetherNY
+# CreditPerks
 
-#Description💡:
-We wanted to make a web application to help users with the organization of their credit card reward benefits. Credit cards help to provide people with great rewards in specific categories, depending on which card they have. Keeping track of all of the cashback and point multipliers can sometimes get confusing, especially if someone has more than 1 or 2 cards. The app would allow users to add/edit/remove personally owned credit cards and assist in filtering out which specific card they should use for a specific category and occasion. 
+## Purpose of building CreditPerks:
 
-#Backend Languages & Packages/Library/Database/Frameworks used 👷‍♂️:
-Python
-Django -> Flask (flask_sqlalchemy)
-PostgreSQL
+This application was built for the TechTogether NYC hackathon.
+The current demo can be accessed on https://christinaor.com/cc-rewards-app.
+<br>
 
-#Frontend Languages/Frameworks:
-JavaScript
-React
+## Application Description:
 
-#Challenges we ran into🕸:
-This was our first time setting up a database and webapp environment from scratch so, we had trouble understanding how everything is connected from the database to backend and frontend. Additionally, we also didn’t have any experience with the frameworks that we used in the backend (Flask), so we spent quite a lot of time switching around frameworks to see which one would work and trying to set up the database. In the end, we decided to use Flask and explored different libraries it offers such as flask_sqlalchemy, request, etc.
+CreditPerks is a financial web application that can help a user track their credit cards and the benefits associated with them. Credit cards provide people with great rewards in general and specific categories, but keeping track of all the benefits (cashback and point multipliers) can become confusing when a user has multiple cards. This application lets the user track their cards, alter the rewards associated with the cards, and filter the cards based on category.
 
-In the frontend, there were a few bugs that required some extra time to solve, but we were able to get through them.
+<br>
 
-#If we had more time, what other features would we want to add🔮:
-We do want to continue working on this project even after the hackathon and finish up. With the limited time and experience, we were unable to get the backend working completely. We want the project to become more user-friendly and connect to a working database. We would add some of our stretch features, such as a credit cards suggestion page, card utilization tracking, and budgeting.
+## Frontend Languages/Frameworks used:
 
-#What we learned🧠:
-We got more familiar with setting up an environment to start a web application. We were also able to learn about the different types of backend frameworks and how to set up cloud hosting services like Microsoft Azure.
+-   React
+-   JavaScript
 
-#Accomplishments🏆:
-Although we were not able to bring our project to completion, we all completed our first in-person hackathon and it was definitely an experience for all of us.
+## Backend Languages/Frameworks used:
+
+-   Python
+-   Django -> Flask (flask_sqlalchemy)
+-   PostgreSQL
+
+<br>
+
+## Some challenges:
+
+-   For the majority of the team, this was their first time setting up a database and deploying it. We tinkered with different backend frameworks to decide which one we could work with in a reasonable amount of time. In the end, the team landed on Flask and explored its libraries, such as flask_sqlalchemy, request, etc.
+
+-   We were unable to connect the frontend to the backend during the hackathon, but we would like the fetch requests to be able to access the database in the future.
+
+A few bugs were encountered on the frontend, but we were able to solve them in time.
+
+<br>
+
+## Stretch Features 🔮
+
+-   Card utilization tracking
+-   Credit card suggestions based on card usage
+-   Budgeting
+
+## 🧠 What we learned 🧠
+
+The team became more familiar with setting up an environment to start a web application. We also learned about different types of backend frameworks and how to set up cloud hosting services like Microsoft Azure.
+
+<br>
+
+## 🏆 Accomplishments
+
+This was everyone's first in-person hackathon and was a great experience!
