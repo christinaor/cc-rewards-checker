@@ -1,7 +1,6 @@
 @import 'src/styles/colors.scss';
 
 .cardDisplay {
-  // padding: 2rem 1rem;
   min-height: 400px;
 }
 
@@ -33,7 +32,7 @@
   min-height: 100px;
   // width: 100%;
 
-  border: 1px solid $backgroundColorMint;
+  // border: 1px solid $backgroundColorMint;
   border-radius: 20px;
   background-color: $mainTextColorWhite;
 }
