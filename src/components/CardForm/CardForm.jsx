@@ -40,12 +40,13 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
 
   return (
     <div className={styles.cardForm}>
-      <div>Add A Card:</div>
+      <h2>Add A Card:</h2>
     
-      <form>
-        <div>
-          <label htmlFor="card-name">Card Name</label>
+      <form className={styles.addCardForm}>
+        <div className={styles.addCardFormField}>
+          <label htmlFor="card-name" className={styles.addCardFormLabel}>Card Name</label>
           <input 
+            className={styles.addCardFormInput}
             name="card-name" 
             type="text" 
             value={cardForm.name} 
@@ -53,9 +54,10 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
           />
         </div>
 
-        <div>
-          <label htmlFor="card-categories">Category</label>
+        <div className={styles.addCardFormField}>
+          <label htmlFor="card-categories" className={styles.addCardFormLabel}>Category</label>
           <input 
+            className={styles.addCardFormInput}
             name="card-categories" 
             type="text" 
             value={cardForm.category} 
@@ -63,9 +65,10 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
           />
         </div>
 
-        <div>
-          <label htmlFor="card-percentage">Percentage</label>
+        <div className={styles.addCardFormField}>
+          <label htmlFor="card-percentage" className={styles.addCardFormLabel}>Percentage</label>
           <input 
+            className={styles.addCardFormInput}
             name="card-percentage" 
             type="text" 
             value={cardForm.percentage} 
@@ -73,9 +76,10 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
           />
         </div>
 
-        <div>
-          <label htmlFor="card-points">Points</label>
+        <div className={styles.addCardFormField}>
+          <label htmlFor="card-points" className={styles.addCardFormLabel}>Points</label>
           <input 
+            className={styles.addCardFormInput}
             name="card-points" 
             type="number" 
             value={cardForm.points} 
@@ -83,7 +87,7 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
           />
         </div>
 
-        <div>
+        <div className={styles.addCardFormButtons}>
           <button onClick={handleAddCard}>Add Card</button>
           <button onClick={() => setAddingCard(false)}>Cancel</button>
         </div>

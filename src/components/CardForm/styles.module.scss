@@ -1,3 +1,39 @@
+@import '/src/styles/colors.scss';
+
 .cardForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1.5rem 1rem;
+}
+
+// .addCardForm {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.addCardFormField {
+  display: flex;
+
+  margin: 1rem 0;
+}
+
+.addCardFormLabel {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.addCardFormInput {
+  height: 2rem;
+
+  border: 1px solid $backgroundColorDarkMint;
+  border-radius: 8px;
+}
+
+.addCardFormButtons {
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
 }
