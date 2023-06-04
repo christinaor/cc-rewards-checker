@@ -9,7 +9,6 @@ import CardDisplay from "../../components/CardDisplay/CardDisplay";
 export default function Home(props) {
   // userData - arr of objs with card data
   const [userData, setUserData] = useState(mockCardData);
-  // const [userData, setUserData] = useState([]);
   const [addingCard, setAddingCard] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
   const [isEditingCard, setIsEditingCard] = useState(false);

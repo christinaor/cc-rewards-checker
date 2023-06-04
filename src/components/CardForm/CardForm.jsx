@@ -12,26 +12,14 @@ export default function CardForm({ setAddingCard, userData, setUserData }) {
    */  
   const [cardForm, setCardForm] = useState({
     name: '',
-    // benefits: [],
     category: '',
     percentage: '',
     points: '',
   });
-  // const [cardBenefit, setCardBenefit] = useState({
-  //   category: '',
-  //   percentage: '',
-  //   points: '',
-  // });
-  const [dropdownCategories, setDropdownCategories] = useState([
-    'restaurant',
-    'entertainment',
-    'gaming',
-  ]);
 
   const handleAddCard = (e) => {
     e.preventDefault();
 
-    console.log('Added card')
     const postCard = async () => {
       if (true) {
         const updatedUserData = [...userData];

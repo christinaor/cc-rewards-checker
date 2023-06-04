@@ -1,10 +1,8 @@
 import { useState } from "react";
 
-// import categories from '/mockdata/categoriesData';
-
 import styles from './styles.module.scss';
 
-export default function CategoryFilter({ categories, setCategories, currentCategory, setCurrentCategory }) {
+export default function CategoryFilter({ categories, currentCategory, setCurrentCategory }) {
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   const handleDropdownClick = (e) => {
@@ -20,7 +18,6 @@ export default function CategoryFilter({ categories, setCategories, currentCateg
 
   return (
     <div className={styles.categoryFilter}>
-      {/* <div className={styles.filterText}>Category Filter:</div> */}
       <div className={`${toggleDropdown ? styles.toggledDropdown : ''} ${styles.displayCategory}`} onClick={() => setToggleDropdown(!toggleDropdown)}>{currentCategory}</div>
 
       {toggleDropdown && (
