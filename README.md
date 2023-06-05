@@ -31,7 +31,7 @@ CreditPerks is a financial web application that can help a user track their cred
 
 -   We were unable to connect the frontend to the backend during the hackathon, but we would like the fetch requests to be able to access the database in the future.
 
-A few bugs were encountered on the frontend, but we were able to solve them in time.
+-   A few bugs were encountered on the frontend, but we were able to solve them in time.
 
 <br>
 
